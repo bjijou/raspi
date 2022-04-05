@@ -49,7 +49,7 @@ if __name__ == '__main__':
         print(salto + salto)
         print(colorText(welcome))
         print(emoj)
-#        print("beep")
+        print("beep")
 #        beep(19,1,0.1)
         led(18,3,1)
 #        beep(19,1,0.8)  
