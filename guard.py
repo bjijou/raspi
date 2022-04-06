@@ -63,8 +63,8 @@ if __name__ == '__main__':
   
         while True:
             if distance() < 25.00 :
- #             print ("Distancia:"+ str("{0:.2f}".format(distance())))
-              beep(19,0.1,0.1)
+             print ("Distancia:"+ str("{0:.2f}".format(distance())))
+#              beep(19,0.1,0.1)
             elif (distance() > 25.00 and distance() < 35.00) :
               print ("Distancia:"+ str("{0:.2f}".format(distance())))         
 #              beep(19,0.5,0.1)  
