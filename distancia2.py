@@ -49,7 +49,7 @@ if __name__ == '__main__':
 	    if dist < 25.0 :
                print ("Distancia %.1f cm" % dist +" Estas muy cerca.") 
    	    elif (dist > 25.0 and dist < 40) :
-	       print ("Measured Distance = %.1f cm" % dist+" Estas muy lejos")         
+	       print ("--Measured Distance = %.1f cm" % dist+" Estas muy lejos")         
   	    elif dist > 40 :
                print ("Fuera de alcance ( %.1f cm)" % dist)
             else:
