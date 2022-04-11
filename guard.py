@@ -4,6 +4,7 @@ from buzzer import beep
 from distancia import distance
 from datetime import datetime
 from led import led
+from temperatura import Temperatura
 
 
 COLORS = {\
@@ -22,8 +23,7 @@ COLORS = {\
 
 # variables
 
-welcome = "[[red]]****** Welcome [[blue]]* Welcome [[yellow]]* Welcome [[red]]* Welcome [[green]]* Welcome ******"
-emoj = "\U0001f600   " + "\U0001F606   " + "\U0001F440   " + "\U0001F441   " + "\U0001F6A8   " + "\U0001F515   "
+welcome = "[[red]]****** [[blue]]Welcome [[red]]****** [[green]] "
 salto = "\n"
 
 # get date time
@@ -48,32 +48,26 @@ if __name__ == '__main__':
         os.system("clear" )  #use this for windows. change to os.system("clear") for linux
         print(salto + salto)
         print(colorText(welcome))
-        print(emoj)
-        print("beep")
-#        beep(19,1,0.1)
-        led(18,3,1)
-#        beep(19,1,0.8)  
+        print("**********  Guard Armed ************")         
+        beep(19,1,0.05)
+        led(18,1,1)
 
         ladistancia = str("{0:.2f}".format(distance()))
+        temperatura = str("{0:.2f}".format(Temperatura()))
 
-         
-#        print ("La distancia: "+ ladistancia)
         #Escribir log
-        log(dt_string + " - " + ladistancia + " cm.")
+        log(dt_string + " - " + ladistancia + " cm. Temp:" + temperatura + " °C")
   
         while True:
-            if distance() < 25.00 :
-             print ("Distancia:"+ str("{0:.2f}".format(distance())))
-#              beep(19,0.1,0.1)
-            elif (distance() > 25.00 and distance() < 35.00) :
-              print ("Distancia:"+ str("{0:.2f}".format(distance())))         
-#              beep(19,0.5,0.1)  
-#            elif distance() > 40 :
-#               print ("Distancia:"+ str("{0:.2f}".format(distance())))
+            if distance() < 20.00 :
+#             print ("Distancia:"+ str("{0:.2f}".format(distance())))
+             beep(19,0.1,0.02)              
+            elif (distance() > 20.00 and distance() < 35.00) :
+#             print ("Distancia:"+ str("{0:.2f}".format(distance())))         
+              beep(19,0.5,0.1)            
             else:
-               print ("nada")
-#            print ("Distancia:"+ str("{0:.2f}".format(distance())))
-            time.sleep(0.7)
+               pass
+            time.sleep(0.1)
         # Reset by pressing CTRL + C
     except KeyboardInterrupt:
         print(salto)
