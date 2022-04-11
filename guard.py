@@ -60,13 +60,13 @@ if __name__ == '__main__':
   
         while True:
             if distance() < 20.00 :
-#             print ("Distancia:"+ str("{0:.2f}".format(distance())))
+             print ("Distancia:"+ str("{0:.2f}".format(distance())))
              beep(19,0.1,0.02)              
             elif (distance() > 20.00 and distance() < 35.00) :
-#             print ("Distancia:"+ str("{0:.2f}".format(distance())))         
+              print ("Distancia:"+ str("{0:.2f}".format(distance())))         
               beep(19,0.5,0.1)            
             else:
-               pass
+              print ("Temperatura:"+ str("{0:.2f}".format(Temperatura())))
             time.sleep(0.1)
         # Reset by pressing CTRL + C
     except KeyboardInterrupt:
